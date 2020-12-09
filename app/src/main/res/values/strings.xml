@@ -1,6 +1,6 @@
 <resources>
-<!--    TODO Strings-->
-<!--    To make that the app could to be international -->
+    <!--    TODO Strings-->
+    <!--    To make that the app could to be international -->
     <string name="app_name">FoodWasteApp</string>
     <string name="title_activity_form_sign_in">Register Form</string>
     <string name="welcome">Welcome</string>
@@ -12,9 +12,18 @@
     <string name="im_foundation">I am foundation</string>
     <string name="want_donate_question">Do you want to donate ?</string>
     <string name="donate">Donate</string>
+    
+    <string name="filter">Filter</string>
+    <string name="food">Food</string>
+    <string name="clothes">Clothes</string>
+    <string name="furniture">Furniture</string>
+    <string name="charity_organization">Charity Organization</string>
+    <string name="foundations">Foundations</string>
+    <string name="homeless_shelters">Homeless shelters</string>
 
-<!--    Image content description -->
-<!--    Content description content description attribute links a text description to a control,
+
+    <!--    Image content description -->
+    <!--    Content description content description attribute links a text description to a control,
         ImageView, or other focusable object that otherwise has no text content.-->
     <string name="logo_content_description" translatable="false">Logo app</string>
 </resources>
