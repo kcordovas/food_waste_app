@@ -121,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/donate"
                 android:textColor="?attr/colorAccent"
+                android:layout_marginTop="@dimen/dimen12dp"
                 app:rippleColor="@drawable/selector_color_outline_button_accent"
                 style="?attr/materialButtonOutlinedStyle"/>
         </LinearLayout>
