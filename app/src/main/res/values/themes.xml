@@ -1,16 +1,30 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+<!--    TODO THEME-->
+    <!-- Customize your theme here. -->
+<!--    https://material.io/develop/android/theming/color-->
     <!-- Base application theme. -->
     <style name="Theme.FoodWasteApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryLight</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorAccentLight</item>
         <item name="colorOnSecondary">@color/black</item>
+
+<!--        Surface colors affect surfaces of components, such as cards, sheets, and menus.-->
+        <item name="colorSurface">@color/white</item>
+<!--        A color that passes accessibility guidelines for text/iconography when drawn on top of the background color. -->
+        <item name="colorOnBackground">@color/black</item>
+<!--        A color that passes accessibility guidelines for text/iconography when drawn on top of the surface color -->
+        <item name="colorOnSurface">@color/black</item>
+<!--        Error color indicates errors states, for components such as text fields -->
+        <item name="colorError">@color/errorColor</item>
+<!--        A color that passes accessibility guidelines for text/iconography when drawn on top of the error color. -->
+        <item name="colorOnError">@color/white</item>
+
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryDark</item>
     </style>
 </resources>

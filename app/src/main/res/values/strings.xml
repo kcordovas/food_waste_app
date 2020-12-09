@@ -1,3 +1,20 @@
 <resources>
+<!--    TODO Strings-->
+<!--    To make that the app could to be international -->
     <string name="app_name">FoodWasteApp</string>
+    <string name="title_activity_form_sign_in">Register Form</string>
+    <string name="welcome">Welcome</string>
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="join">Join</string>
+    <string name="are_you_new_question">Are you new ?</string>
+    <string name="im_foundation">I am foundation</string>
+    <string name="want_donate_question">Do you want to donate ?</string>
+    <string name="donate">Donate</string>
+
+<!--    Image content description -->
+<!--    Content description content description attribute links a text description to a control,
+        ImageView, or other focusable object that otherwise has no text content.-->
+    <string name="logo_content_description" translatable="false">Logo app</string>
 </resources>
