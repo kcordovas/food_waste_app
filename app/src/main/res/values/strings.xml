@@ -26,4 +26,6 @@
     <!--    Content description content description attribute links a text description to a control,
         ImageView, or other focusable object that otherwise has no text content.-->
     <string name="logo_content_description" translatable="false">Logo app</string>
+    <string name="circular_status_content_description" translatable="false">User state</string>
+    <string name="image_foundation_content_description" translatable="false">Image of an foundation</string>
 </resources>

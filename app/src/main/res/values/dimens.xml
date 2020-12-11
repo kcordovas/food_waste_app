@@ -9,4 +9,7 @@
     <dimen name="dimen36dp">36dp</dimen>
     <dimen name="dimen48dp">48dp</dimen>
     <dimen name="dimen1dp">1dp</dimen>
+    <dimen name="dimen100dp">100dp</dimen>
+    <dimen name="dimen150dp">150dp</dimen>
+
 </resources>

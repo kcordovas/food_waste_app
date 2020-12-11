@@ -20,7 +20,7 @@ public class User {
     // 1 - Connected
     // 0 - Inactive
     // Could to be more states conform to requests
-    private int state;
+    private int state = 1;
 
     /**
      * Constructor

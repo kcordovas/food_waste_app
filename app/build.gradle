@@ -45,4 +45,8 @@ dependencies {
     // Getting started
     // https://material.io/develop/android/docs/getting-started
     implementation 'com.google.android.material:material:1.2.1'
+
+    // Picasso Library to resize the images when their're very lenght
+    // https://github.com/square/picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
 }

@@ -19,18 +19,58 @@ public class Business {
     // more details about this object visit the User class
     private User user;
 
+    // Type is to identify if it's a charity organizations, foundations, etc.
+    // or to a food company, clothes company, etc.
+    // WHERE
+    // 1 - Charity Organizations
+    // 2 - Foundations
+    // 3 - Homeless shelters
+    // 0 - others that if aren't nonprofit
+    private int type;
+
     /**
      * Constructor
      * @param id is unique identifier generated of automate form
      * @param name is the real name of company or organization
-     * @param urlPicture is the url picture
      * @param user is the object that contain user name and password
+     * @param type is the business type (charity organizations, foundations or others)
      */
-    public Business(String id, String name, String urlPicture, User user) {
+    public Business(String id, String name, String urlPicture, int type, User user) {
         this.id = id;
         this.name = name;
         this.urlPicture = urlPicture;
         this.user = user;
+        this.type = type;
+    }
+
+    /**
+     * Second Constructor
+     * @param id is unique identifier generated of automate form
+     * @param name is the real name of company or organization
+     * @param urlPicture is the url picture
+     * @param type is the business type (charity organizations, foundations or others)
+     */
+    public Business(String id, String name, String urlPicture, int type) {
+        this.id = id;
+        this.name = name;
+        this.urlPicture = urlPicture;
+        this.type = type;
+    }
+
+    /**
+     * Getter type
+     * @return type
+     */
+    public int getType() {
+        return type;
+    }
+
+    /**
+     * Setter the type to identify the type of organizations
+     * @param type is the business type (charity organizations, foundations or others)
+     */
+    public void setType(int type) {
+        this.type = type;
     }
 
     /**
