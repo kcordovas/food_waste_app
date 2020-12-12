@@ -69,7 +69,6 @@
                 android:indeterminate="true" />
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_business"
-                android:layout_below="@id/progress_bar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </RelativeLayout>

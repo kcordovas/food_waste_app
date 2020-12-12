@@ -1,12 +1,15 @@
 package com.fiverr.foodwasteapp.activity.list.recyclerview;
 
 import android.annotation.SuppressLint;
+import android.app.LauncherActivity;
 import android.content.Context;
 import android.graphics.drawable.GradientDrawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,6 +20,7 @@ import com.fiverr.foodwasteapp.utils.Utils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
@@ -57,10 +61,14 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
     class FoundationsViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imageFoundation;
         private final ImageView iconStateConnection;
+        private final TextView textTitle;
+        private final TextView textType;
         public FoundationsViewHolder(@NonNull View itemView) {
             super(itemView);
             imageFoundation = itemView.findViewById(R.id.image_business);
             iconStateConnection = itemView.findViewById(R.id.image_user_state);
+            textTitle = itemView.findViewById(R.id.text_title_business);
+            textType = itemView.findViewById(R.id.text_type_business);
         }
 
         @SuppressLint("UseCompatLoadingForDrawables")
@@ -70,6 +78,9 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
                     .placeholder(context.getDrawable(R.drawable.ic_baseline_cloud_download))
                     .error(context.getDrawable(R.drawable.ic_baseline_image_black))
                     .into(imageFoundation);
+
+            textTitle.setText(business.getName());
+            textType.setText(Utils.typeOrganizations(context, business.getType()));
 
             if(business.getUser() == null) return;
 

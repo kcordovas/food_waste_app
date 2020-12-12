@@ -1,6 +1,7 @@
 package com.fiverr.foodwasteapp.utils;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.drawable.GradientDrawable;
 import android.view.View;
 
@@ -34,6 +35,27 @@ public class Utils {
                 colorState = R.color.dividerColor;
             // Finally, set color on the shape and it on the view
             background.setColor(context.getColor(colorState));
+        }
+    }
+
+    /**
+     * Get in text, the type of business
+     * @param context is the activity that require this
+     * @param type is the type of business in number (more info, review the Object Business) (foundation, charity organizations)
+     * @return String type of Business
+     */
+    public static String typeOrganizations(Context context, int type) {
+        Resources resources = context.getResources();
+        switch (type) {
+            case 1:
+                return resources.getString(R.string.charity_organization);
+            case 2:
+                return resources.getString(R.string.foundations);
+            case 3:
+                return resources.getString(R.string.homeless_shelters);
+            default:
+                return resources.getString(R.string.business);
+
         }
     }
 }

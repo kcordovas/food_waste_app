@@ -20,7 +20,7 @@
     <string name="charity_organization">Charity Organization</string>
     <string name="foundations">Foundations</string>
     <string name="homeless_shelters">Homeless shelters</string>
-
+    <string name="business">Business</string>
 
     <!--    Image content description -->
     <!--    Content description content description attribute links a text description to a control,
