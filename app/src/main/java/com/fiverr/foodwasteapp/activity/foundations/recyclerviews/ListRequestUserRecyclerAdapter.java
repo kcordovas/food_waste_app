@@ -10,11 +10,24 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fiverr.foodwasteapp.R;
+import com.fiverr.foodwasteapp.models.Order;
+import com.fiverr.foodwasteapp.utils.Utils;
+import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     // Create an context variable to instance the activity that created the recycler view
-    private Context context;
+    private final Context context;
+    // Create an Order list to add for the recycler view adapter
+    private final ArrayList<Order> listOrder;
+
+    public ListRequestUserRecyclerAdapter(Context context, ArrayList<Order> listOrder) {
+        this.context = context;
+        this.listOrder = listOrder;
+    }
 
     @NonNull
     @Override
@@ -26,24 +39,38 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+        Order order = listOrder.get(position);
+        ((ItemRequestViewHolder) holder).setOrderItem(order);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return listOrder.size();
     }
 
     class ItemRequestViewHolder extends RecyclerView.ViewHolder {
         private final TextView textUserName;
         private final TextView textDate;
         private final TextView textTime;
+        public final MaterialButton buttonDeny;
+        public final MaterialButton buttonApprove;
 
         public ItemRequestViewHolder(@NonNull View itemView) {
             super(itemView);
             textUserName = itemView.findViewById(R.id.text_user_name_item);
             textDate = itemView.findViewById(R.id.text_date_item);
             textTime = itemView.findViewById(R.id.text_time_item);
+            buttonApprove = itemView.findViewById(R.id.button_approve_item);
+            buttonDeny = itemView.findViewById(R.id.button_deny_item);
+        }
 
+        void setOrderItem(Order orderItem) {
+            Date date = new Date();
+            date.setTime(orderItem.getDateDelivery());
+            textUserName.setText(orderItem.getPerson().getName());
+            textDate.setText(Utils.formatLongDate(date));
+            date.setTime(orderItem.getTimeDelivery());
+            textTime.setText(Utils.formatLongDate(date));
         }
     }
 }

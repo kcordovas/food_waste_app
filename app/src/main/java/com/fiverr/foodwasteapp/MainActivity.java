@@ -6,6 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.fiverr.foodwasteapp.activity.foundations.ListRequestUserActivity;
 import com.fiverr.foodwasteapp.activity.user.list.ListFoundationActivity;
 import com.fiverr.foodwasteapp.databinding.ActivityMainBinding;
 
@@ -18,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.buttonSignIn.setOnClickListener(view -> {
             final Intent intent = new Intent(this, ListFoundationActivity.class);
+            startActivity(intent);
+        });
+        binding.textFoundation.setOnClickListener(view -> {
+            final Intent intent = new Intent(this, ListRequestUserActivity.class);
             startActivity(intent);
         });
     }
