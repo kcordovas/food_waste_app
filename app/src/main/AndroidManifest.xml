@@ -12,11 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodWasteApp">
-        <activity android:name=".activity.user.schedule.ScheduleDonateUser"
-            android:windowSoftInputMode="stateHidden"
-            android:parentActivityName=".activity.user.list.ListFoundationActivity"/>
+        <activity android:name=".activity.foundations.ListRequestUserActivity" />
+        <activity
+            android:name=".activity.user.schedule.ScheduleDonateUser"
+            android:parentActivityName=".activity.user.list.ListFoundationActivity"
+            android:windowSoftInputMode="stateHidden" />
         <activity android:name=".activity.user.list.ListFoundationActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

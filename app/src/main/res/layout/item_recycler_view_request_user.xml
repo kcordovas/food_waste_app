@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen12dp"
+    app:cardCornerRadius="@dimen/dimen12dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen8dp"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/image_icon_user_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/icon_person_content_description"
+                    android:src="@drawable/ic_baseline_person_24_black"/>
+                <TextView
+                    android:id="@+id/text_user_name_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/user_name"
+                    android:layout_marginStart="@dimen/dimen16dp"
+                    android:layout_toEndOf="@id/image_icon_user_item" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen10dp">
+                <ImageView
+                    android:id="@+id/image_icon_date_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/icon_date_content_description"
+                    android:src="@drawable/ic_baseline_today_24_black"/>
+                <TextView
+                    android:id="@+id/text_date_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_date"
+                    android:layout_marginStart="@dimen/dimen16dp"
+                    android:layout_toEndOf="@id/image_icon_date_item" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen10dp">
+                <ImageView
+                    android:id="@+id/image_icon_time_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/icon_time_content_description"
+                    android:src="@drawable/ic_baseline_access_time_24_black"/>
+                <TextView
+                    android:id="@+id/text_time_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_hour"
+                    android:layout_marginStart="@dimen/dimen16dp"
+                    android:layout_toEndOf="@id/image_icon_time_item" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/dimen8dp"
+            android:paddingEnd="@dimen/dimen8dp"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_deny_item"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="@dimen/dimen4dp"
+                android:layout_height="wrap_content"
+                android:text="@string/deny"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_approve_item"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/approve" />
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

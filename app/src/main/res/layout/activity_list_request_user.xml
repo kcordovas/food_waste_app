@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/dimen16dp"
+        tools:context=".activity.foundations.ListRequestUserActivity">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image_logo_organization"
+                android:layout_width="@dimen/dimen48dp"
+                android:layout_height="@dimen/dimen48dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/dimen4dp"
+                android:contentDescription="@string/logo_content_description"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/text_title_name_business"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/charity_organization"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                style="@style/TextAppearance.MaterialComponents.Headline5" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/request_list"
+                android:layout_marginTop="@dimen/dimen16dp"
+                style="@style/TextAppearance.MaterialComponents.Overline" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ProgressBar
+                    android:id="@+id/progress_request_list"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+                <TextView
+                    android:id="@+id/text_empty_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/empty_list"
+                    android:gravity="center_horizontal"
+                    android:layout_centerInParent="true"
+                    style="@style/TextAppearance.MaterialComponents.Body1" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_request_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</layout>

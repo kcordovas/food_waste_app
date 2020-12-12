@@ -28,14 +28,23 @@
     <string name="time">Time</string>
     <string name="hour_to_delivery">Hour to delivery</string>
     <string name="request">Request</string>
+
+    <string name="request_list">Request list</string>
+    <string name="empty_list">Empty List</string>
+    <string name="approve">Approve</string>
+    <string name="deny">Deny</string>
+
     <!--    Image content description -->
     <!--    Content description content description attribute links a text description to a control,
         ImageView, or other focusable object that otherwise has no text content.-->
     <string name="logo_content_description" translatable="false">Logo app</string>
     <string name="circular_status_content_description" translatable="false">User state</string>
     <string name="image_foundation_content_description" translatable="false">Image of an foundation</string>
-    
-<!--    These strings are use only to example into the development, not translate him-->
+    <string name="icon_person_content_description" translatable="false">Icon Person</string>
+    <string name="icon_date_content_description" translatable="false">Icon Date for today</string>
+    <string name="icon_time_content_description" translatable="false">Icon time</string>
+
+    <!--    These strings are use only to example into the development, not translate him-->
     <string name="example_date" translatable="false">Dic 12, 2020</string>
     <string name="example_hour" translatable="false">7:00 AM</string>
 
