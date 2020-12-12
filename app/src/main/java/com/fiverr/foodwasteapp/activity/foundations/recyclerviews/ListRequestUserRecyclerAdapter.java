@@ -23,10 +23,18 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
     private final Context context;
     // Create an Order list to add for the recycler view adapter
     private final ArrayList<Order> listOrder;
+    // Instance the Listener to detect which button is clicked
+    ICLickListener listener;
 
     public ListRequestUserRecyclerAdapter(Context context, ArrayList<Order> listOrder) {
         this.context = context;
         this.listOrder = listOrder;
+    }
+
+    public ListRequestUserRecyclerAdapter(Context context, ArrayList<Order> listOrder, ICLickListener listener) {
+        this.context = context;
+        this.listOrder = listOrder;
+        this.listener = listener;
     }
 
     @NonNull
@@ -40,7 +48,10 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Order order = listOrder.get(position);
-        ((ItemRequestViewHolder) holder).setOrderItem(order);
+        ItemRequestViewHolder itemRequestViewHolder = (ItemRequestViewHolder) holder;
+        itemRequestViewHolder.setOrderItem(order);
+        itemRequestViewHolder.buttonApprove.setOnClickListener(view -> listener.onApprove(view, position));
+        itemRequestViewHolder.buttonDeny.setOnClickListener(view -> listener.onDenied(view, position));
     }
 
     @Override
@@ -72,5 +83,15 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
             date.setTime(orderItem.getTimeDelivery());
             textTime.setText(Utils.formatLongDate(date));
         }
+    }
+
+    /**
+     * Interface Click Listener to detect when user clicked on buttons
+     */
+    public interface ICLickListener {
+        // method use to when clicked on Approve Button
+        void onApprove(View view, int position);
+        // method use to when clicke on Denied Button
+        void onDenied(View view, int position);
     }
 }
