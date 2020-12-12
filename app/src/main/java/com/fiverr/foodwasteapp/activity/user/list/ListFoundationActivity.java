@@ -1,19 +1,23 @@
-package com.fiverr.foodwasteapp.activity.list;
+package com.fiverr.foodwasteapp.activity.user.list;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 
 import com.fiverr.foodwasteapp.R;
-import com.fiverr.foodwasteapp.activity.list.recyclerview.ItemFoundationRecyclerViewAdapter;
+import com.fiverr.foodwasteapp.activity.user.list.recyclerview.ItemFoundationRecyclerViewAdapter;
+import com.fiverr.foodwasteapp.activity.user.schedule.ScheduleDonateUser;
 import com.fiverr.foodwasteapp.databinding.ActivityListFoundationBinding;
 import com.fiverr.foodwasteapp.models.Business;
 import com.fiverr.foodwasteapp.models.User;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class ListFoundationActivity extends AppCompatActivity {
 
@@ -44,5 +48,21 @@ public class ListFoundationActivity extends AppCompatActivity {
         ItemFoundationRecyclerViewAdapter adapter = new ItemFoundationRecyclerViewAdapter(this, listBusiness);
         
         binding.recyclerViewBusiness.setAdapter(adapter);
+        binding.recyclerViewBusiness.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+            @Override
+            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                return true;
+            }
+
+            @Override
+            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
+                Intent intent = new Intent(ListFoundationActivity.this, ScheduleDonateUser.class);
+                startActivity(intent);
+            }
+
+            @Override
+            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
+            }
+        });
     }
 }

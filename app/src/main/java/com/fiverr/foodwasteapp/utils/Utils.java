@@ -7,6 +7,9 @@ import android.view.View;
 
 import com.fiverr.foodwasteapp.R;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 /**
  * Utils class is to instance method in all classes
  * This methods'll use to either class, activity or others
@@ -57,5 +60,25 @@ public class Utils {
                 return resources.getString(R.string.business);
 
         }
+    }
+
+    /**
+     * Transform date in String to better the visibility
+     * Example: January 12, 1952
+     * @param date is the Date class to transform
+     * @return string date format to use in either code place
+     */
+    public static String formatLongDate(Date date) {
+        return DateFormat.getDateInstance(DateFormat.LONG).format(date);
+    }
+
+    /**
+     * Transform the time to String to better the visibility
+     * Example: 14:20
+     * @param date is the Date that contains the time (hour and minute)
+     * @return string time format to use in either code place
+     */
+    public static String formatSimpleTime(Date date) {
+        return DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
     }
 }

@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.fiverr.foodwasteapp.activity.list.ListFoundationActivity;
+import com.fiverr.foodwasteapp.activity.user.list.ListFoundationActivity;
 import com.fiverr.foodwasteapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {

@@ -12,7 +12,7 @@
     <string name="im_foundation">I am foundation</string>
     <string name="want_donate_question">Do you want to donate ?</string>
     <string name="donate">Donate</string>
-    
+
     <string name="filter">Filter</string>
     <string name="food">Food</string>
     <string name="clothes">Clothes</string>
@@ -21,11 +21,22 @@
     <string name="foundations">Foundations</string>
     <string name="homeless_shelters">Homeless shelters</string>
     <string name="business">Business</string>
-
+    <string name="connected">Connected</string>
+    <string name="inactive">Inactive</string>
+    <string name="date_to_delivery">Date to delivery</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="hour_to_delivery">Hour to delivery</string>
+    <string name="request">Request</string>
     <!--    Image content description -->
     <!--    Content description content description attribute links a text description to a control,
         ImageView, or other focusable object that otherwise has no text content.-->
     <string name="logo_content_description" translatable="false">Logo app</string>
     <string name="circular_status_content_description" translatable="false">User state</string>
     <string name="image_foundation_content_description" translatable="false">Image of an foundation</string>
+    
+<!--    These strings are use only to example into the development, not translate him-->
+    <string name="example_date" translatable="false">Dic 12, 2020</string>
+    <string name="example_hour" translatable="false">7:00 AM</string>
+
 </resources>

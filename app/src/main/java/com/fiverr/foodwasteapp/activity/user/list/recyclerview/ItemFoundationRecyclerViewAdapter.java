@@ -1,10 +1,7 @@
-package com.fiverr.foodwasteapp.activity.list.recyclerview;
+package com.fiverr.foodwasteapp.activity.user.list.recyclerview;
 
 import android.annotation.SuppressLint;
-import android.app.LauncherActivity;
 import android.content.Context;
-import android.graphics.drawable.GradientDrawable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +17,6 @@ import com.fiverr.foodwasteapp.utils.Utils;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
