@@ -9,6 +9,7 @@ import com.fiverr.foodwasteapp.R;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Random;
 
 /**
  * Utils class is to instance method in all classes
@@ -80,5 +81,16 @@ public class Utils {
      */
     public static String formatSimpleTime(Date date) {
         return DateFormat.getTimeInstance(DateFormat.SHORT).format(date);
+    }
+
+    /**
+     * Generate an random number with 4 digits
+     * if you want to add more digits, only add a number '9' more or less,
+     * @return string format in number because is most simply for compare
+     */
+    public static String generateRandomCodeVerification() {
+        Random random = new Random();
+        int number = random.nextInt(9999);
+        return String.valueOf(number);
     }
 }
