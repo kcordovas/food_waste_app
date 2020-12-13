@@ -34,6 +34,11 @@
     <string name="approve">Approve</string>
     <string name="deny">Deny</string>
 
+    <string name="what_is_reason">What is the reason?</string>
+    <string name="message">Message</string>
+    <string name="send">Send</string>
+    <string name="cancel">Cancel</string>
+
     <!--    Image content description -->
     <!--    Content description content description attribute links a text description to a control,
         ImageView, or other focusable object that otherwise has no text content.-->
@@ -43,6 +48,7 @@
     <string name="icon_person_content_description" translatable="false">Icon Person</string>
     <string name="icon_date_content_description" translatable="false">Icon Date for today</string>
     <string name="icon_time_content_description" translatable="false">Icon time</string>
+    <string name="icon_close_content_description" translatable="false">Icon close</string>
 
     <!--    These strings are use only to example into the development, not translate him-->
     <string name="example_date" translatable="false">Dic 12, 2020</string>
