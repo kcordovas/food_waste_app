@@ -71,6 +71,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/layout_buttons_approve_denied"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="@dimen/dimen8dp"
@@ -91,5 +92,12 @@
                 android:layout_height="wrap_content"
                 android:text="@string/approve" />
         </LinearLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_view_verification_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="?attr/colorAccent"
+            android:visibility="gone"
+            android:text="@string/view_verification_code"/>
     </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

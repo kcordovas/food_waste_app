@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fiverr.foodwasteapp.R;
 import com.fiverr.foodwasteapp.models.Order;
+import com.fiverr.foodwasteapp.models.decorator.OrderApproved;
 import com.fiverr.foodwasteapp.utils.Utils;
 import com.google.android.material.button.MaterialButton;
 
@@ -50,8 +51,15 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
         Order order = listOrder.get(position);
         ItemRequestViewHolder itemRequestViewHolder = (ItemRequestViewHolder) holder;
         itemRequestViewHolder.setOrderItem(order);
-        itemRequestViewHolder.buttonApprove.setOnClickListener(view -> listener.onApprove(view, position));
         itemRequestViewHolder.buttonDeny.setOnClickListener(view -> listener.onDenied(view, position));
+        itemRequestViewHolder.buttonApprove.setOnClickListener(view -> {
+            itemRequestViewHolder.buttonVerificationCode.setVisibility(View.VISIBLE);
+            itemRequestViewHolder.buttonDeny.setVisibility(View.GONE);
+            itemRequestViewHolder.buttonApprove.setVisibility(View.GONE);
+            listener.onApprove(view, position);
+            this.notifyDataSetChanged();
+        });
+        itemRequestViewHolder.buttonVerificationCode.setOnClickListener(view -> listener.approvedRequest(position));
     }
 
     @Override
@@ -65,6 +73,7 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
         private final TextView textTime;
         public final MaterialButton buttonDeny;
         public final MaterialButton buttonApprove;
+        public final MaterialButton buttonVerificationCode;
 
         public ItemRequestViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -73,6 +82,7 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
             textTime = itemView.findViewById(R.id.text_time_item);
             buttonApprove = itemView.findViewById(R.id.button_approve_item);
             buttonDeny = itemView.findViewById(R.id.button_deny_item);
+            buttonVerificationCode = itemView.findViewById(R.id.button_view_verification_code);
         }
 
         void setOrderItem(Order orderItem) {
@@ -91,7 +101,9 @@ public class ListRequestUserRecyclerAdapter extends RecyclerView.Adapter<Recycle
     public interface ICLickListener {
         // method use to when clicked on Approve Button
         void onApprove(View view, int position);
-        // method use to when clicke on Denied Button
+        // method use to when clicked on Denied Button
         void onDenied(View view, int position);
+        // method when user approved the request
+        void approvedRequest(int position);
     }
 }
