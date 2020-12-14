@@ -61,7 +61,11 @@ public class ListRequestUserActivity extends AppCompatActivity {
                     OrderApproved orderApproved;
                     @Override
                     public void approvedRequest(int position) {
-                        Log.d(TAG, "approvedRequest: " + orderApproved.getVerificationCode());
+                        DialogFullScreenFoundationVerificationCode dialog = new DialogFullScreenFoundationVerificationCode();
+                        Bundle bundle = new Bundle();
+                        bundle.putString(dialog.getTag(), orderApproved.getVerificationCode());
+                        dialog.setArguments(bundle);
+                        dialog.show(getSupportFragmentManager(), dialog.getTag());
                     }
 
                     @Override

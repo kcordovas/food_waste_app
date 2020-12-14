@@ -54,7 +54,6 @@
     <!--    These strings are use only to example into the development, not translate him-->
     <string name="example_date" translatable="false">Dic 12, 2020</string>
     <string name="example_hour" translatable="false">7:00 AM</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="example_verification_code" translatable="false">123456</string>
 
 </resources>
