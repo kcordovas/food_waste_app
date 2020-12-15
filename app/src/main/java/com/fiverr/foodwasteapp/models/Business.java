@@ -1,11 +1,15 @@
 package com.fiverr.foodwasteapp.models;
 
+import java.io.Serializable;
+
 /**
  * Business class is the object that could to use
  * how for foods company, clothes company or furniture companies.
  * or for charity organizations, foundations, homeless shelters, etc too.
+ * This implements Serializable for it could to be to send by Activities
+ * or Fragments
  */
-public class Business {
+public class Business implements Serializable {
     // Id is an identifier unique into the server
     // (it'll to be to create with automate form when business create an user)
     private String id;

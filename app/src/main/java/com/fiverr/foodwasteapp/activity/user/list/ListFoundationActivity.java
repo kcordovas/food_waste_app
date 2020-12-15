@@ -1,14 +1,11 @@
 package com.fiverr.foodwasteapp.activity.user.list;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 
 import com.fiverr.foodwasteapp.R;
 import com.fiverr.foodwasteapp.activity.user.list.recyclerview.ItemFoundationRecyclerViewAdapter;
@@ -29,7 +26,7 @@ public class ListFoundationActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_list_foundation);
         //setContentView(R.layout.activity_list_foundation);
 
-        // To create an instance of
+        // To create an instance of LinearLayoutManager and set the orientation
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         binding.recyclerViewBusiness.setLayoutManager(linearLayoutManager);
         setRecyclerView();
@@ -45,24 +42,14 @@ public class ListFoundationActivity extends AppCompatActivity {
         listBusiness.add(new Business("1", "Fundacion", "http://i.imgur.com/DvpvklR.png", 3, user));
         listBusiness.add(new Business("1", "Fundacion", "http://i.imgur.com/DvpvklR.png", 3, user));
 
-        ItemFoundationRecyclerViewAdapter adapter = new ItemFoundationRecyclerViewAdapter(this, listBusiness);
+        ItemFoundationRecyclerViewAdapter adapter = new ItemFoundationRecyclerViewAdapter(this, listBusiness,
+                (view, business) -> {
+            Intent intent = new Intent(this, ScheduleDonateUser.class);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(ListFoundationActivity.class.getSimpleName(), business);
+            startActivity(intent);
+        });
         
         binding.recyclerViewBusiness.setAdapter(adapter);
-        binding.recyclerViewBusiness.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                return true;
-            }
-
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                Intent intent = new Intent(ListFoundationActivity.this, ScheduleDonateUser.class);
-                startActivity(intent);
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-            }
-        });
     }
 }

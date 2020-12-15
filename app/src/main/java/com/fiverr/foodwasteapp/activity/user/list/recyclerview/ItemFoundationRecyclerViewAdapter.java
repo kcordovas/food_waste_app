@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fiverr.foodwasteapp.R;
 import com.fiverr.foodwasteapp.models.Business;
 import com.fiverr.foodwasteapp.utils.Utils;
+import com.google.android.material.card.MaterialCardView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -24,15 +25,18 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
     ArrayList<Business> listBusiness;
     // Context is to instance the activity with the item
     Context context;
+    // Listener how a callback
+    IClickListenerFoundation listener;
 
     /**
      * Constructor to receive the list of Business
      * @param listBusiness list of Business (only non-profit companies)
      * @param context is the instance of Activity that called
      */
-    public ItemFoundationRecyclerViewAdapter(Context context, ArrayList<Business> listBusiness) {
+    public ItemFoundationRecyclerViewAdapter(Context context, ArrayList<Business> listBusiness, IClickListenerFoundation listener) {
         this.listBusiness = listBusiness;
         this.context = context;
+        this.listener = listener;
     }
 
     @NonNull
@@ -47,6 +51,7 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         Business business = listBusiness.get(position);
         ((FoundationsViewHolder) holder).setFoundations(business);
+        ((FoundationsViewHolder) holder).cardViewMain.setOnClickListener(view -> listener.onClickOnFoundation(view, business));
     }
 
     @Override
@@ -59,12 +64,15 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
         private final ImageView iconStateConnection;
         private final TextView textTitle;
         private final TextView textType;
+        private final MaterialCardView cardViewMain;
+
         public FoundationsViewHolder(@NonNull View itemView) {
             super(itemView);
             imageFoundation = itemView.findViewById(R.id.image_business);
             iconStateConnection = itemView.findViewById(R.id.image_user_state);
             textTitle = itemView.findViewById(R.id.text_title_business);
             textType = itemView.findViewById(R.id.text_type_business);
+            cardViewMain = itemView.findViewById(R.id.card_item_list_foundation);
         }
 
         @SuppressLint("UseCompatLoadingForDrawables")
@@ -82,5 +90,9 @@ public class ItemFoundationRecyclerViewAdapter extends RecyclerView.Adapter<Recy
 
             Utils.changeColorState(context, business.getUser().getState(), iconStateConnection);
         }
+    }
+
+    public interface IClickListenerFoundation {
+        void onClickOnFoundation(View view, Business business);
     }
 }
