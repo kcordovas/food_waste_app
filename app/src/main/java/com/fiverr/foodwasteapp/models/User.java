@@ -1,13 +1,17 @@
 package com.fiverr.foodwasteapp.models;
 
+import java.io.Serializable;
+
 /**
  * User class is the object that contain
  * the data about the user name and password
  * this user contain some more params
  * how state (Connected, Inactive).
  * Modify conform user object to request
+ * This implements Serializable that can send this object
+ * through of Activities
  */
-public class User {
+public class User implements Serializable {
     // IdUser is an unique identification
     // into server, it's necessary to instance with
     // other objects, how Business class or Person class
